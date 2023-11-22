@@ -59,7 +59,7 @@ export default function Default() {
             <div className="container">
               <div className="row">
                 <div className="col-sm-12">
-                  <a href="index.html" className="nav-logo">
+                  <a href="/" className="nav-logo">
                     <img src="images/logo.png" alt="One Ring Rentals" />
                   </a>
                   {/* BEGIN MAIN MENU */}
