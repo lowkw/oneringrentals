@@ -1,9 +1,50 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from 'next/head';
+import Image from 'next/image';
+import { useState } from 'react';
 //import { Inter } from 'next/font/google'
 //import styles from '@/styles/Home.module.css'
 
 //const inter = Inter({ subsets: ['latin'] })
+
+function SelectStay() {
+  const [selectedValue, setSelectedValue] = useState('');
+  const options = ['', '1 Night', '2 Nights', '3 Nights', '4 Nights', '5 Nights', '6 Nights' , '7 Nights', '8 Nights', '9 Night', '10 Nights', '11 Nights', '12 Nights', '13 Nights', '14 Nights'];
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  return (
+    <>
+      <select value={selectedValue} onChange={handleSelectChange}>
+        {options.map((option, index) => (
+          <option key={index} value={option}>{option}</option>
+        ))}
+      </select>
+      <p>Selected stay: {selectedValue}</p>
+    </>
+  );
+};
+
+function SelectRooms() {
+  const [selectedValue, setSelectedValue] = useState('');
+  const options = ['', '0', '1', '2', '3', '4', '5+'];
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  return (
+    <>
+      <select value={selectedValue} onChange={handleSelectChange}>
+        {options.map((option, index) => (
+          <option key={index} value={option}>{option}</option>
+        ))}
+      </select>
+      <p>Selected bedrooms: {selectedValue}</p>
+    </>
+  );
+};
 
 export default function Home() {
   return (
@@ -56,7 +97,7 @@ export default function Home() {
             <div className="container">
               <div className="row">
                 <div className="col-sm-12">
-                  <a href="/" className="nav-logo"><img src="images/logo.png" alt="One Ring Rentals" /></a>
+                  <a href="/" className="nav-logo"><img src="/images/logo.png" alt="One Ring Rentals" /></a>
                   {/* BEGIN SEARCH */}
                   <div id="sb-search" className="sb-search">
                     <form>
@@ -134,13 +175,15 @@ export default function Home() {
                       <div className="input-group date chzn-container" data-datepicker>
                         <input placeholder="Arrive on..." type="text" className="form-control" data-date-format="DD/MM/YYYY" />
                         <span className="input-group-addon">
-                          <span className="glyphicon glyphicon-calendar" />
+                          <span className="glyphicon-calendar glyphicon" />
                         </span>
                       </div>
                     </div>
                     <div className="form-control-small">
-                      <select id="search_status" name="search_status" data-placeholder="Stay...">
-                        {/*option value=""> </option*/}                        
+                      <SelectStay/>
+                      {/*
+                      <select id="search_status" name="search_status">
+                        <option value=""> </option>  
                         <option value={1}>1 Night</option>
                         <option value={2}>2 Nights</option>
                         <option value={3}>3 Nights</option>
@@ -154,13 +197,15 @@ export default function Home() {
                         <option value={11}>11 Nights</option>
                         <option value={12}>12 Nights</option>
                         <option value={13}>13 Nights</option>
-                        <option value={14}>14 Nights</option>
-                        <option value={15}>Stay...</option>                        
+                        <option value={14}>14 Nights</option>                                             
                       </select>
+                      */}
                     </div>
                     <div className="form-control-small">
-                      <select id="search_bedrooms" name="search_bedrooms" data-placeholder="Bedrooms">
-                        {/*option value=""> </option*/}                        
+                      <SelectRooms/>
+                      {/*
+                      <select id="search_bedrooms" name="search_bedrooms">
+                        <option value=""> </option>                        
                         <option value={0}>0</option>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
@@ -169,6 +214,7 @@ export default function Home() {
                         <option value={5}>5</option>
                         <option value="5plus">5+</option>
                       </select>
+                    */}
                     </div>
                     <div className="form-control-large">
                       <input type="text" className="form-control" name="location" placeholder="City, State, Country, etc..." />
@@ -480,7 +526,7 @@ export default function Home() {
           <div id="footer-top" className="container">
             <div className="row">
               <div className="block col-sm-3">
-                <a href="#"><img src="images/logo.png" alt="One Ring Rentals" /></a>
+                <a href="#"><img src="/images/logo.png" alt="One Ring Rentals" /></a>
                 <br /><br />
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo eros nibh, et dictum elit tincidunt eget. Pellentesque volutpat quam dignissim, convallis elit id, efficitur sem. Vivamus ac scelerisque sem. Aliquam sed enim rutrum nibh gravida pellentesque nec at metus.</p>
               </div>
