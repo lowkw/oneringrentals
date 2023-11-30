@@ -173,17 +173,18 @@ export default function Home() {
                   <div className="form-group">
                     <div className="form-control-small">
                       <div className="input-group date chzn-container" data-datepicker>
-                        <input placeholder="Arrive on..." type="text" className="form-control" data-date-format="DD/MM/YYYY" />
+                        <input placeholder="Arrive on..." type="text" name="arrived_date" className="form-control" data-date-format="DD/MM/YYYY" />
                         <span className="input-group-addon">
                           <span className="glyphicon-calendar glyphicon" />
                         </span>
                       </div>
                     </div>
+                    
                     <div className="form-control-small">
                       <SelectStay/>
                       {/*
-                      <select id="search_status" name="search_status">
-                        <option value=""> </option>  
+                      <select id="search_status" name="search_status">                        
+                        <option value=""> </option>                          
                         <option value={1}>1 Night</option>
                         <option value={2}>2 Nights</option>
                         <option value={3}>3 Nights</option>
@@ -195,7 +196,7 @@ export default function Home() {
                         <option value={9}>9 Nights</option>
                         <option value={10}>10 Nights</option>
                         <option value={11}>11 Nights</option>
-                        <option value={12}>12 Nights</option>
+                        <option value={12}>12 Nights</option>                        
                         <option value={13}>13 Nights</option>
                         <option value={14}>14 Nights</option>                                             
                       </select>
@@ -204,6 +205,7 @@ export default function Home() {
                     <div className="form-control-small">
                       <SelectRooms/>
                       {/*
+                      <SelectRooms/>
                       <select id="search_bedrooms" name="search_bedrooms">
                         <option value=""> </option>                        
                         <option value={0}>0</option>
@@ -214,7 +216,7 @@ export default function Home() {
                         <option value={5}>5</option>
                         <option value="5plus">5+</option>
                       </select>
-                    */}
+                      */}
                     </div>
                     <div className="form-control-large">
                       <input type="text" className="form-control" name="location" placeholder="City, State, Country, etc..." />
