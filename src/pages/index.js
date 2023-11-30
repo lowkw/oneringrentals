@@ -16,7 +16,7 @@ function SelectStay() {
 
   return (
     <>
-      <select value={selectedValue} onChange={handleSelectChange}>
+      <select id="search_status" value={selectedValue} onChange={handleSelectChange}>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
         ))}
@@ -36,7 +36,7 @@ function SelectRooms() {
 
   return (
     <>
-      <select value={selectedValue} onChange={handleSelectChange}>
+      <select id="search_bedrooms" value={selectedValue} onChange={handleSelectChange}>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
         ))}
