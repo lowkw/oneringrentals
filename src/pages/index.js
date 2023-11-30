@@ -173,12 +173,10 @@ export default function Home() {
                   <div className="form-group">
                     <div className="form-control-small">
                       <div className="input-group date chzn-container" data-datepicker>
-                        <input placeholder="Arrive on..." type="text" name="arrived_date" className="form-control" data-date-format="DD/MM/YYYY" />
-                        {/*
+                        <input placeholder="Arrive on..." type="text" name="arrived_date" className="form-control" data-date-format="DD/MM/YYYY" />                        
                         <span className="input-group-addon">
                           <span className="glyphicon-calendar glyphicon" />
-                        </span>
-                        */}
+                        </span>                        
                       </div>
                     </div>                    
                     <div className="form-control-small">
