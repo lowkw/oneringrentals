@@ -4,8 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <script async src="js/common.js"/>        
-      <script async src="js/common/jquery-1.11.1.min.js"/>
+      <script async src="js/common.js"/>              
+      <script async src="js/common/jquery-1.11.1.min.js"/>      
       <script async src="js/common/bootstrap.min.js"/>
       <script async src="js/common/bootstrap-datepicker.js"/>
       <script async src="js/common/chosen.min.js"/>
